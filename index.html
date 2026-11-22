@@ -805,6 +805,27 @@ p {
     transition-duration:.01ms !important;
   }
 }
+  /* Scrollable slide for long text and images */
+.slide.active .slide-content {
+    overflow-y: auto !important;
+    overflow-x: hidden !important;
+    max-height: calc(100vh - 250px) !important;
+    height: 100% !important;
+    padding: 20px !important;
+    box-sizing: border-box !important;
+    scroll-behavior: smooth;
+}
+
+/* Let pictures show fully */
+.slide.active .slide-content img {
+    display: block !important;
+    width: 90% !important;
+    max-width: 550px !important;
+    height: auto !important;
+    max-height: none !important;
+    object-fit: contain !important;
+    margin: 25px auto !important;
+}
 </style>
 </head>
 
@@ -1004,8 +1025,8 @@ and also btw having a jaatni in your life is already a win okay
   <div class="wavy-frame kiss-frame">
     <h1>One last thing, my baby</h1>
 
-    <div class="kiss-gif">
-      <img src="kiss.gif" alt="Cute animated kiss">
+    <div class="kiss-gif.gif">
+      <img src="kiss-gif.gif" alt="Cute animated kiss">
     </div>
 
     <h2 class="kiss-message"></h2>
