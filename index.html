@@ -826,6 +826,62 @@ p {
     object-fit: contain !important;
     margin: 25px auto !important;
 }
+
+/* FIX: slides with long content scroll inside their frames */
+#slide-3 .wavy-frame, #slide-7 .wavy-frame, #slide-9 .wavy-frame {
+  justify-content: flex-start !important;
+  overflow-y: auto !important;
+  overflow-x: hidden !important;
+  min-height: 0 !important;
+  scroll-behavior: smooth;
+}
+#slide-3 .letter-scroll {
+  width: 100%;
+  max-height: none !important;
+  height: auto !important;
+  overflow: visible !important;
+  flex: 0 0 auto !important;
+}
+#slide-7 .wavy-frame > p,
+#slide-7 .wavy-frame > .vintage-frame {
+  flex: 0 0 auto !important;
+}
+#slide-7 .vintage-frame img {
+  max-height: none !important;
+  height: auto !important;
+  width: min(90%, 550px) !important;
+  object-fit: contain !important;
+}
+#slide-9 .kiss-frame { align-items: center !important; }
+#slide-9 .kiss-gif { display:block !important; }
+
+
+/* SLIDE 7: enlarge the photo area and show the entire image */
+#slide-7 .vintage-frame {
+  width: min(88%, 680px) !important;
+  max-width: 680px !important;
+  padding: 10px !important;
+  flex: 0 0 auto !important;
+  margin: 28px auto 35px !important;
+}
+#slide-7 .vintage-frame img {
+  width: 100% !important;
+  height: 520px !important; /* noticeably taller photo area */
+  max-height: none !important;
+  object-fit: contain !important; /* no face/photo cropping */
+  display: block !important;
+}
+#slide-7 .wavy-frame {
+  overflow-y: auto !important;
+  overflow-x: hidden !important;
+  align-items: center !important;
+  padding-bottom: 35px !important;
+}
+@media (max-width: 768px) {
+  #slide-7 .vintage-frame { width: 94% !important; }
+  #slide-7 .vintage-frame img { height: 420px !important; }
+}
+
 </style>
 </head>
 
@@ -1025,8 +1081,8 @@ and also btw having a jaatni in your life is already a win okay
   <div class="wavy-frame kiss-frame">
     <h1>One last thing, my baby</h1>
 
-    <div class="kiss-gif.gif">
-      <img src="kiss-gif.gif" alt="Cute animated kiss">
+    <div class="kiss">
+      <img src="kiss.gif" alt="Cute animated kiss">
     </div>
 
     <h2 class="kiss-message"></h2>
