@@ -864,22 +864,66 @@ p {
   flex: 0 0 auto !important;
   margin: 28px auto 35px !important;
 }
-#slide-7 .vintage-frame img {
-  width: 100% !important;
-  height: 520px !important; /* noticeably taller photo area */
-  max-height: none !important;
-  object-fit: contain !important; /* no face/photo cropping */
-  display: block !important;
-}
 #slide-7 .wavy-frame {
-  overflow-y: auto !important;
-  overflow-x: hidden !important;
-  align-items: center !important;
-  padding-bottom: 35px !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: flex-start !important;
+
+    overflow-y: auto !important;
+    overflow-x: hidden !important;
+
+    height: 100% !important;
+    max-height: 100% !important;
+    padding: 30px 20px 50px !important;
+    scroll-behavior: smooth;
 }
+
+/* Keep the letter text fully visible */
+#slide-7 .wavy-frame > p {
+    flex-shrink: 0 !important;
+    width: 100% !important;
+    line-height: 1.7 !important;
+    margin-bottom: 30px !important;
+}
+
+/* Larger photo frame */
+#slide-7 .vintage-frame {
+    width: 90% !important;
+    max-width: 750px !important;
+    padding: 12px !important;
+    border: 8px solid #d4af37 !important;
+    margin: 25px auto 50px !important;
+
+    flex-shrink: 0 !important;
+    height: auto !important;
+    overflow: visible !important;
+}
+
+/* ACTUAL PHOTO AREA — INCREASED HEIGHT */
+#slide-7 .vintage-frame img {
+    display: block !important;
+    width: 100% !important;
+    height: 700px !important;
+    max-height: none !important;
+    object-fit: contain !important;
+    object-position: center !important;
+    margin: 0 auto !important;
+}
+
+/* Mobile */
 @media (max-width: 768px) {
-  #slide-7 .vintage-frame { width: 94% !important; }
-  #slide-7 .vintage-frame img { height: 420px !important; }
+    #slide-7 .wavy-frame {
+        padding: 20px 12px 40px !important;
+    }
+
+    #slide-7 .vintage-frame {
+        width: 96% !important;
+    }
+
+    #slide-7 .vintage-frame img {
+        height: 500px !important;
+    }
 }
 
 </style>
