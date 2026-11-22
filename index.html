@@ -1,0 +1,1122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>HAPPY 22nd BIRTHDAY KARTIKK</title>
+
+<style>
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: radial-gradient(circle at top, #8f0b19 0%, #520009 100%);
+  font-family: "Times New Roman", Times, serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  overflow: hidden;
+  color: #241916;
+}
+
+.scrapbook-container {
+  position: relative;
+  width: 94vw;
+  max-width: 1120px;
+  height: 86vh;
+  max-height: 760px;
+  background: #fdfbf7;
+  border-radius: 18px;
+  box-shadow: 0 25px 60px rgba(0,0,0,.65);
+  border: 8px solid #a8111f;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.slides-wrapper {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.slide {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity .35s ease, transform .35s ease;
+  transform: translateX(18px);
+  padding: 20px 24px 72px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  background: #fdfbf7;
+}
+
+.slide.active {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateX(0);
+}
+
+.wavy-frame {
+  border: 3px dashed #b81424;
+  border-radius: 14px;
+  padding: 22px 28px;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  background: radial-gradient(circle,#fffdf9 0%,#f6efe2 100%);
+  overflow: hidden;
+}
+
+h1 {
+  font-family: "Times New Roman",Times,serif;
+  font-size: clamp(2rem,3.6vw,3rem);
+  font-weight: bold;
+  color: #b81424;
+  margin-bottom: 10px;
+  line-height: 1.15;
+}
+
+h2 {
+  font-family: "Times New Roman",Times,serif;
+  font-size: clamp(1.45rem,2.4vw,2.1rem);
+  font-weight: bold;
+  color: #8b0000;
+  margin-bottom: 12px;
+  line-height: 1.25;
+}
+
+p {
+  font-family: "Times New Roman",Times,serif;
+  font-size: clamp(1.05rem,1.45vw,1.25rem);
+  color: #2b211e;
+  line-height: 1.55;
+}
+
+/* SLIDE 1 */
+.envelope-bg {
+  background: linear-gradient(135deg,#b31322 0%,#6e030e 100%);
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  position: relative;
+}
+
+.envelope-flap {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 46%;
+  background: rgba(90,0,10,.45);
+  clip-path: polygon(0 0,100% 0,50% 100%);
+  z-index: 2;
+  pointer-events: none;
+}
+
+.wax-seal-btn {
+  width: 104px;
+  height: 104px;
+  background: radial-gradient(circle,#ffe57f 0%,#d4af37 68%,#8f6212 100%);
+  border-radius: 50%;
+  box-shadow: 0 10px 24px rgba(0,0,0,.45),inset 0 3px 6px rgba(255,255,255,.75);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 38px;
+  z-index: 5;
+  animation: sealPulse 2s infinite;
+  border: 3px solid #b8860b;
+}
+
+.envelope-hint {
+  margin-top: 18px;
+  z-index: 5;
+  color: #fff5e6;
+  font-size: 1.2rem;
+  letter-spacing: .5px;
+}
+
+@keyframes sealPulse {
+  0%,100% {transform:scale(1);}
+  50% {transform:scale(1.06);}
+}
+
+/* SLIDE 3 LETTER */
+.letter-frame {
+  justify-content: flex-start;
+  text-align: left;
+}
+
+.letter-frame h2 {
+  width: 100%;
+  text-align: center;
+  padding-bottom: 10px;
+  border-bottom: 1px dashed #d6b8b8;
+  margin-bottom: 14px;
+  flex-shrink: 0;
+}
+
+.letter-scroll {
+  width: 100%;
+  flex: 1;
+  overflow-y: auto;
+  padding-right: 12px;
+  padding-bottom: 18px;
+}
+
+.letter-scroll p {
+  white-space: pre-line;
+  text-align: left;
+  font-size: clamp(1.05rem,1.3vw,1.2rem);
+  line-height: 1.65;
+  color: #241916;
+}
+
+.letter-scroll::-webkit-scrollbar {
+  width: 8px;
+}
+
+.letter-scroll::-webkit-scrollbar-thumb {
+  background: #c56b73;
+  border-radius: 8px;
+}
+
+/* SLIDE 4 CERTIFICATE */
+.award-card {
+  position: relative;
+  background: linear-gradient(180deg,#fffdf5 0%,#fbf3d5 100%);
+  border: 3px solid #c99a2e;
+  outline: 5px solid rgba(201,154,46,.22);
+  border-radius: 16px;
+  padding: 34px 36px 28px;
+  max-width: 720px;
+  width: 92%;
+  box-shadow: 0 14px 30px rgba(0,0,0,.14);
+}
+
+.award-ribbon {
+  display: inline-block;
+  background: #b81424;
+  color: #fff8e7;
+  font-weight: bold;
+  font-size: .95rem;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  padding: 6px 18px;
+  border-radius: 999px;
+  border: 2px solid #e2b84b;
+  margin-bottom: 14px;
+}
+
+.award-divider {
+  width: 140px;
+  height: 2px;
+  background: linear-gradient(90deg,transparent,#c99a2e,transparent);
+  margin: 12px auto 16px;
+}
+
+.award-recipient {
+  font-size: 1.45rem;
+  font-weight: bold;
+  color: #5c1018;
+  margin-bottom: 12px;
+}
+
+.award-quote {
+  font-style: italic;
+  font-size: 1.2rem;
+  color: #2f221f;
+  line-height: 1.55;
+}
+
+#slide-4 .wavy-frame {
+  overflow-y: auto;
+}
+
+#slide-4 .award-card {
+  animation: awardCuteEntrance 1s cubic-bezier(.2,.8,.2,1) both,
+             awardCuteGlow 3s ease-in-out 1s infinite;
+}
+
+#slide-4 .award-ribbon {
+  animation: ribbonBounce 2.8s ease-in-out infinite;
+}
+
+#slide-4 .award-divider {
+  animation: dividerHeart 2.4s ease-in-out infinite;
+}
+
+#slide-4 .award-card::before {
+  content: "♡ ✦ ♡";
+  position: absolute;
+  top: -24px;
+  left: 50%;
+  transform: translateX(-50%);
+  color: #b81424;
+  font-size: 24px;
+  animation: awardHearts 2.3s ease-in-out infinite;
+}
+
+#slide-4 .award-card::after {
+  content: "✧";
+  position: absolute;
+  right: 18px;
+  top: 14px;
+  color: #d4af37;
+  font-size: 28px;
+  animation: twinkle 1.5s ease-in-out infinite;
+}
+
+@keyframes awardCuteEntrance {
+  0% {opacity:0;transform:translateY(35px) rotate(-2deg) scale(.88);}
+  70% {opacity:1;transform:translateY(-5px) rotate(1deg) scale(1.02);}
+  100% {opacity:1;transform:translateY(0) rotate(0) scale(1);}
+}
+
+@keyframes awardCuteGlow {
+  0%,100% {box-shadow:0 14px 30px rgba(0,0,0,.14);}
+  50% {box-shadow:0 18px 38px rgba(184,20,36,.28);}
+}
+
+@keyframes ribbonBounce {
+  0%,100% {transform:translateY(0);}
+  50% {transform:translateY(-4px);}
+}
+
+@keyframes dividerHeart {
+  0%,100% {transform:scale(1);}
+  50% {transform:scale(1.06);}
+}
+
+@keyframes awardHearts {
+  0%,100% {opacity:.5;transform:translateX(-50%) scale(.95);}
+  50% {opacity:1;transform:translateX(-50%) scale(1.12);}
+}
+
+@keyframes twinkle {
+  0%,100% {opacity:.45;transform:scale(.8) rotate(0);}
+  50% {opacity:1;transform:scale(1.2) rotate(15deg);}
+}
+
+/* SLIDE 5 GALLERY */
+.gallery-grid {
+  position: relative;
+  width: 100%;
+  flex: 1;
+  min-height: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: clamp(10px,2vw,24px);
+  padding: 42px 8px 12px;
+  overflow: visible;
+  perspective: 1000px;
+}
+
+.gallery-grid::before {
+  content: "";
+  position: absolute;
+  top: 20px;
+  left: 8%;
+  right: 8%;
+  height: 7px;
+  border-top: 4px solid #8f1724;
+  border-radius: 50%;
+  transform: rotate(-2deg);
+  filter: drop-shadow(0 2px 1px rgba(70,0,0,.2));
+}
+
+.polaroid {
+  position: relative;
+  z-index: 1;
+  background: #fffdf8;
+  padding: 11px 11px 16px;
+  border-radius: 5px;
+  box-shadow: 0 12px 22px rgba(0,0,0,.18);
+  border: 1px solid #eadfd2;
+  display: flex;
+  flex-direction: column;
+  width: min(31%,280px);
+  min-width: 0;
+  max-height: 100%;
+  transform-origin: top center;
+  opacity: 0;
+  transform: translateY(-120%) rotate(var(--tilt));
+  animation: none;
+}
+
+.polaroid:nth-child(1) {--tilt:-5deg;}
+.polaroid:nth-child(2) {--tilt:3deg;}
+.polaroid:nth-child(3) {--tilt:-3deg;}
+
+.slide.active .polaroid:nth-child(1) {
+  animation: polaroidDrop .9s cubic-bezier(.18,.75,.25,1.15) .15s forwards;
+}
+.slide.active .polaroid:nth-child(2) {
+  animation: polaroidDrop .9s cubic-bezier(.18,.75,.25,1.15) .45s forwards;
+}
+.slide.active .polaroid:nth-child(3) {
+  animation: polaroidDrop .9s cubic-bezier(.18,.75,.25,1.15) .75s forwards;
+}
+
+@keyframes polaroidDrop {
+  0% {opacity:0;transform:translateY(-120%) rotate(var(--tilt));}
+  70% {opacity:1;transform:translateY(8px) rotate(var(--tilt));}
+  85% {transform:translateY(-5px) rotate(var(--tilt));}
+  100% {opacity:1;transform:translateY(0) rotate(var(--tilt));}
+}
+
+.polaroid::before {
+  content: "";
+  position: absolute;
+  top: -35px;
+  left: 50%;
+  transform: translateX(-50%) rotate(2deg);
+  width: 18px;
+  height: 42px;
+  background: linear-gradient(90deg,#c58b45,#e1b56f,#b87932);
+  border-radius: 3px;
+  box-shadow: 0 2px 5px rgba(0,0,0,.18);
+  z-index: 3;
+}
+
+.polaroid img {
+  width: 100%;
+  height: clamp(130px,24vh,220px);
+  object-fit: cover;
+  border-radius: 4px;
+  background: #f2ebe0;
+  margin-bottom: 10px;
+}
+
+.polaroid p {
+  font-size: clamp(.82rem,1.05vw,1rem);
+  line-height: 1.4;
+  color: #2b211e;
+  overflow-y: auto;
+  max-height: 120px;
+}
+
+.gallery-grid .polaroid:hover {
+  z-index: 5;
+  transform: translateY(-8px) rotate(0deg) scale(1.04);
+  transition: transform .25s ease;
+}
+
+/* SLIDE 2 BALLOONS */
+.birthday-frame {isolation:isolate;}
+
+.balloon-cluster {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.balloon {
+  position: absolute;
+  width: clamp(38px,5vw,66px);
+  height: clamp(52px,6.5vw,86px);
+  border-radius: 50% 50% 46% 46%;
+  box-shadow: inset -9px -8px 12px rgba(80,0,0,.18),
+              inset 8px 8px 10px rgba(255,255,255,.35),
+              0 8px 14px rgba(80,0,0,.12);
+  animation: balloonFloat 5s ease-in-out infinite;
+}
+
+.balloon::after {
+  content: "";
+  position: absolute;
+  bottom: -8px;
+  left: 50%;
+  transform: translateX(-50%);
+  border-left: 6px solid transparent;
+  border-right: 6px solid transparent;
+  border-top: 10px solid currentColor;
+}
+
+.balloon::before {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  width: 1px;
+  height: 85px;
+  background: rgba(120,30,30,.35);
+}
+
+.balloon.red {
+  background: radial-gradient(circle at 30% 25%,#f9b6ad,#b81424 65%,#79000b);
+  color: #b81424;
+}
+
+.balloon.cream {
+  background: radial-gradient(circle at 30% 25%,#fff8e8,#dfc9a8 70%,#b99b73);
+  color: #d5b78d;
+}
+
+.balloon.gold {
+  background: radial-gradient(circle at 30% 25%,#fff0b4,#d4af37 70%,#9b6d16);
+  color: #d4af37;
+}
+
+.balloon.b1 {left:5%;bottom:12%;animation-delay:0s;}
+.balloon.b2 {left:12%;bottom:24%;animation-delay:-1.2s;transform:scale(.78);}
+.balloon.b3 {right:6%;bottom:14%;animation-delay:-2s;}
+.balloon.b4 {right:14%;bottom:28%;animation-delay:-3s;transform:scale(.82);}
+.balloon.b5 {left:25%;bottom:5%;animation-delay:-2.5s;transform:scale(.55);}
+.balloon.b6 {right:26%;bottom:4%;animation-delay:-1.8s;transform:scale(.58);}
+
+@keyframes balloonFloat {
+  0%,100% {translate:0 0;}
+  50% {translate:0 -18px;}
+}
+
+.birthday-content {
+  position: relative;
+  z-index: 2;
+  max-width: 78%;
+}
+
+.birthday-sparkle {
+  position: absolute;
+  color: #c99a2e;
+  font-size: 1.4rem;
+  animation: sparkle 2.4s ease-in-out infinite;
+  pointer-events: none;
+}
+
+.birthday-sparkle.s1 {top:12%;left:20%;}
+.birthday-sparkle.s2 {top:17%;right:18%;animation-delay:.8s;}
+.birthday-sparkle.s3 {bottom:14%;right:24%;animation-delay:1.2s;}
+
+@keyframes sparkle {
+  0%,100% {opacity:.35;transform:scale(.7) rotate(0);}
+  50% {opacity:1;transform:scale(1.15) rotate(15deg);}
+}
+
+/* SLIDE 6 MUSIC */
+.song-sub {
+  font-size: 1.15rem;
+  color: #4a3531;
+  margin-bottom: 8px;
+}
+
+.vinyl-container {
+  position: relative;
+  width: 136px;
+  height: 136px;
+  margin: 10px 0 14px;
+}
+
+.record {
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle,#2b2b2b 18%,#111 20%,#111 40%,#242424 41%,#111 60%);
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 8px 18px rgba(0,0,0,.35);
+}
+
+.record.playing {animation:spin 3s linear infinite;}
+
+.record-center {
+  width: 44px;
+  height: 44px;
+  background: #b81424;
+  border-radius: 50%;
+  border: 3px solid #fff;
+}
+
+@keyframes spin {
+  100% {transform:rotate(360deg);}
+}
+
+.audio-play-btn {
+  margin-top: 8px;
+  font-family: "Times New Roman",Times,serif;
+  font-size: 1.1rem;
+  font-weight: bold;
+  background: #b81424;
+  color: #fff;
+  padding: 10px 22px;
+  border-radius: 999px;
+  cursor: pointer;
+  border: none;
+  box-shadow: 0 5px 14px rgba(184,20,36,.35);
+  transition: transform .2s ease,background .2s ease;
+}
+
+.audio-play-btn:hover {
+  background: #8f0b19;
+  transform: translateY(-1px);
+}
+
+/* SLIDE 7 */
+.vintage-frame {
+  border: 8px solid #d4af37;
+  padding: 8px;
+  background: #fff;
+  box-shadow: 0 10px 24px rgba(0,0,0,.2);
+  border-radius: 8px;
+  max-width: 480px;
+  width: 75%;
+}
+
+.vintage-frame img {
+  width: 100%;
+  height: 270px;
+  object-fit: cover;
+  display: block;
+  background: #f2ebe0;
+}
+
+/* SLIDE 8 */
+.checklist {
+  list-style: none;
+  text-align: left;
+  width: 100%;
+  flex: 1;
+  overflow-y: auto;
+  padding: 6px 14px;
+  display: grid;
+  grid-template-columns: repeat(2,minmax(0,1fr));
+  gap: 6px 28px;
+}
+
+.checklist li {
+  font-size: 1.12rem;
+  line-height: 1.4;
+  padding: 6px 0;
+  border-bottom: 1px dashed #dcc8c0;
+  color: #241916;
+}
+
+/* NAVIGATION */
+.nav-bar {
+  position: absolute;
+  bottom: 14px;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 28px;
+  z-index: 20;
+  pointer-events: none;
+}
+
+.nav-arrow {
+  pointer-events: auto;
+  background: #b81424;
+  color: #fff;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 20px;
+  cursor: pointer;
+  box-shadow: 0 5px 14px rgba(0,0,0,.3);
+  border: 2px solid #fff5eb;
+  transition: transform .2s ease,background .2s ease;
+}
+
+.nav-arrow:hover {
+  background: #8b0000;
+  transform: scale(1.05);
+}
+
+.nav-arrow:active {transform:scale(.94);}
+.nav-arrow.hidden {visibility:hidden;}
+
+/* SLIDE 5: VERTICAL GALLERY OVERRIDES */
+#slide-5 .wavy-frame {
+  justify-content: flex-start !important;
+  overflow-y: auto !important;
+  overflow-x: hidden !important;
+  padding: 24px 12px !important;
+  height: 100% !important;
+  min-height: 0 !important;
+}
+
+#slide-5 h2 {
+  flex: 0 0 auto !important;
+  margin-bottom: 18px !important;
+}
+
+#slide-5 .gallery-grid {
+  display: flex !important;
+  flex-direction: column !important;
+  flex-wrap: nowrap !important;
+  align-items: center !important;
+  justify-content: flex-start !important;
+  gap: 55px !important;
+  width: 100% !important;
+  height: auto !important;
+  flex: 0 0 auto !important;
+  overflow: visible !important;
+  padding: 55px 8px 30px !important;
+}
+
+#slide-5 .polaroid {
+  width: min(94%,680px) !important;
+  max-width: 680px !important;
+  min-width: 0 !important;
+  max-height: none !important;
+  height: auto !important;
+  flex: 0 0 auto !important;
+  margin: 0 auto !important;
+  overflow: visible !important;
+}
+
+#slide-5 .polaroid img {
+  width: 100% !important;
+  height: 78vh !important;
+  min-height: 620px !important;
+  max-height: none !important;
+  aspect-ratio: auto !important;
+  object-fit: contain !important;
+  object-position: center !important;
+  flex-shrink: 0 !important;
+  display: block !important;
+  background: #f2ebe0 !important;
+}
+
+#slide-5 .polaroid p {
+  max-height: none !important;
+  overflow: visible !important;
+  height: auto !important;
+  text-align: center !important;
+  margin-top: 12px !important;
+}
+
+/* SLIDE 9 KISS */
+#slide-9 .kiss-frame {
+  justify-content: center;
+  gap: 12px;
+  overflow: auto;
+  background: radial-gradient(circle,#fffaf0,#f8e7df);
+}
+
+#slide-9 .kiss-gif {
+  width: min(340px,75%);
+  margin: 8px auto;
+  animation: kissFloat 2.5s ease-in-out infinite;
+}
+
+#slide-9 .kiss-gif img {
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
+#slide-9 .kiss-message {
+  color: #b81424;
+  animation: kissPulse 1.8s ease-in-out infinite;
+}
+
+#slide-9 .kiss-subtext {
+  max-width: 600px;
+  font-size: clamp(1rem,2vw,1.25rem);
+  line-height: 1.6;
+}
+
+@keyframes kissFloat {
+  0%,100% {transform:translateY(0);}
+  50% {transform:translateY(-9px);}
+}
+
+@keyframes kissPulse {
+  0%,100% {transform:scale(1);}
+  50% {transform:scale(1.04);}
+}
+
+/* HEARTS AND SPARKLES ON EVERY SLIDE OPENING */
+#slide-opening-particles {
+  position: fixed;
+  inset: 0;
+  z-index: 9998;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.slide-pop {
+  position: absolute;
+  opacity: 0;
+  animation: slidePop 1.15s ease-out forwards;
+  font-size: 12px;
+}
+
+@keyframes slidePop {
+  0% {opacity:0;transform:translateY(12px) scale(.2);}
+  18% {opacity:1;transform:translateY(0) scale(1);}
+  100% {opacity:0;transform:translateY(-70px) scale(.7) rotate(20deg);}
+}
+
+/* RESPONSIVE */
+@media (max-width:768px) {
+  .birthday-content {max-width:90%;}
+  .balloon.b1 {left:2%;bottom:8%;}
+  .balloon.b3 {right:2%;bottom:8%;}
+  .balloon.b2 {left:8%;bottom:20%;}
+  .balloon.b4 {right:8%;bottom:20%;}
+  .award-card {padding:26px 18px 22px;}
+  .award-recipient {font-size:1.1rem;}
+  .award-quote {font-size:1rem;}
+
+  #slide-5 .polaroid {width:96% !important;}
+  #slide-5 .polaroid img {
+    height:78vh !important;
+    min-height:620px !important;
+    max-height:none !important;
+    object-fit:contain !important;
+  }
+
+  #slide-9 .kiss-gif {width:min(300px,80%);}
+}
+
+@media (prefers-reduced-motion:reduce) {
+  *,*::before,*::after {
+    animation-duration:.01ms !important;
+    animation-iteration-count:1 !important;
+    transition-duration:.01ms !important;
+  }
+}
+</style>
+</head>
+
+<body>
+<div class="scrapbook-container">
+
+<div id="slide-opening-particles" aria-hidden="true"></div>
+
+<div class="slides-wrapper">
+
+<!-- SLIDE 1 -->
+<div class="slide active" id="slide-1" style="padding:0;">
+  <div class="envelope-bg" onclick="goToNextSlide()">
+    <div class="envelope-flap"></div>
+    <div class="wax-seal-btn" title="Click to open">💌</div>
+    <div class="envelope-hint">Click the seal to open</div>
+  </div>
+</div>
+
+<!-- SLIDE 2 -->
+<div class="slide" id="slide-2">
+  <div class="wavy-frame birthday-frame">
+
+    <div class="balloon-cluster" aria-hidden="true">
+      <span class="balloon red b1"></span>
+      <span class="balloon cream b2"></span>
+      <span class="balloon red b3"></span>
+      <span class="balloon cream b4"></span>
+      <span class="balloon gold b5"></span>
+      <span class="balloon gold b6"></span>
+    </div>
+
+    <span class="birthday-sparkle s1">✦</span>
+    <span class="birthday-sparkle s2">♡</span>
+    <span class="birthday-sparkle s3">✧</span>
+
+    <div class="birthday-content">
+      <h1>Happyy Birthdayy Myy Cutuuu</h1>
+      <p style="margin-top:14px;font-size:1.45rem;">
+        (mujhe yehi nerdy chize aati h hasio mat)
+      </p>
+    </div>
+  </div>
+</div>
+
+<!-- SLIDE 3 -->
+<div class="slide" id="slide-3">
+  <div class="wavy-frame letter-frame">
+    <h2>Dear Future husband urf Kartik Nautiyal</h2>
+
+    <div class="letter-scroll">
+      <p>Happy Birthday Kartik ❤️
+I genuinely wish every birthday brings you all the happiness success you deserve. I hope you achieve everything never lose that spark in you. I wish I could make today a little more special for you and be there to celebrate all your little moments but virtually i'll try to
+I don't really know how to explain me my feelings but my heart feels so full when it comes to you Sometimes I just sit and think about how far you're going to go in life and it honestly makes me emotional bkc like my chhotu baby is doing i mean i've seen how hard you work for everything you want. Ik nothing ever come easy to you, yet you still keep pushing yourself every single day without giving up pta hai kya No matter what happens between us or what life puts us in i mean the worse already made life go through but yea I will always want to see you win. I'll always want to see you happy, successful, at peace, and proud of yourself. Even if someday I'm not standing next to you the way I wish daily for to be a part of me will still pray for you every day because that's how deeply I care about you. Pta hai kya i know you kartik and what hurts my heart the most is knowing how much you carry inside silently. People see you strength, your ambition, and the way you keep going, but they can't see how much stress pressure you put on yourself just to make your dreams come true and maybe that's why all I ever want to give is love, support you, and remind you that you doesn't have to carry everything alone baby i'm here saath mai kar lenge hum tere mere HUMARE sapne pure!? Haina bol HAAAN bol HAAAANNNNN and If life be on by side and gives me the chance to stay by your side I'd spend every day even i haven't being perfect enough not even close to better but i'm alwys sorry for such an asshole kartik but i want to keep trying to give you the love, comfort, and support you deserve because you truly deserves the world and if life somehow takes us in different directions, I'll still be somewhere praying that you gets everything you ever dreamed of, because seeing you succeed would always make my heart happy. I just love you in a way where your happiness genuinely matters to me, even beyond myself. I love you baby you have no idea how much you mean to me and I deadass know i can't do without you. Pta hai 5th may midnight OUR FIRST CALL pta h us din kis gand phati mai terese storeroom ke pass ko hoke baat kari thi kauki agar mummy papa uth jaate gand alg kar dete meri ki aise raat baat kari vo bhi ladke se lag ni rha hoga tujhe meri baato aur Avaaz se kauki cool side of personality bhi to dikhani thi mujh jesi chutiya ko but kartik by that call I got to know you I knew I wanted to spend time my life with you. I know you probably think ki nahi tha Mazak tha tu serious nahi thi but kartik maa kasam tab hi tu pasand aagaya tha tujhe future husband bol dia tha aur varna socha bhi ni aisa kisi ko bolungi but I geninuely wanna marry you and live my life with you. I wanna grow old and travel with you i just want to be with you in any way in every way. I'm really sorry for the way I am sometimes I know I'm the worst person you ever met bht buri bhoht gandi but I promise im working on it because there is nothing I would wanna do to ruin what we have because you have to understand your mine now and you can't leave we talked about growing older right? to usmai include hota haina getting in senses getting mind to bas phir mai hi hoon vo jisko karna h. And baby i'm here i want to be here with you pleaseeee because the last thing I want is for you to go through anything alone. pta ni par pta hai now that i'm being in love in with you I realized that true love hurts, it does like idk It's you who taught me how to love like mujhe to bas ye hota tha ki jo bhi romcom movie dekhi ki mujhe bhi chaiye insta pe logo ki stories de4khi mujhe  hi chaiye mujhe bhi ese inn logo se sex stories suni ki bc mujhe bhi karna bas yehi rha hai ki mujhe bhi karna hai chaiye aise rehna bas ye na ki kyu exactly kese chaiye kauki hoga to mera na like jesa dekha suna vaisa to nahi hoga life sabki alg hai stories bhi alg hogi acchi bana ni hogi lovy dovy karna hoga being with you like bc jhooth ni bolungi kartik maine aise sochna hi tere saath shuru kia tha and kartik pta hai kya jo bhi ho mai chahti hu like sach sach mai but life mai jo bhi ho saath rahe na rahe i can never stop loving you never leave you no matter what happens & make sure I will be holding your hand no matter how bad the whole world gets, I will never leave your side because baby all the love I have, it's all for you.
+I know you are scared about the future. I know you overthink. I know you fear losing you I feel no different. I know it's not just any relationship because every time I think of you, that's when I really understand how it feels to be this extreme to lose everything for that one person because that one person... they mean the entire universe to you. Whenever you want me to be with you, I just need you to close your eyes and you will find me right beside you, holding your hand and I wouldn't blink twice to lose everything for you, including myself aata hi nahi hai dimaag mai sach bolu to
+All these... these are not just words. These are my emotions. My heart talking to you. All these are promises that I have made to you and myself. Because I need nobody but you. Better be a life full of sadness aur pain than not spending my whole life with you.
+I don't care how long it takes, I don't care how many ups and down we go through, just want it to be you. I want it to be us in the end.
+and same chiz baar baar ni bolni but Kartik I know things haven't been the way they should have been where I could have been better and I know I haven't always made you feel the way you deserved to feel and it's not about ki i didn't want to esa nahi hai kartik it's ki i didn't tried where i should have done I'm genuinely sorry for that. I'm not saying this to prove me right or take away from how you felt. I wish I had understood certain things sooner and handled them differently. Please know that whatever happened was never because I didn't love you or didn't value you. Sach mein Kartik I've loved you so much and I still do. Maybe I couldn't always express it or show it in the right ways but my feelings for you have always been real.
+Tere sahi aur mere galat ke paar we have us OUR US and I wish , pray , manifest , everything i could do for US!!!
+I don't want to lose you or what we had. I still wish we could find our way back to each other and build something better this time. Not by forgetting everything but by understanding each other and choosing to do things differently. I don't expect you to suddenly forget everything or make any decisions today. I just hope someday you might be open to giving us another chance.
+
+No matter what today brings I hope you smile a lot and feel loved. Take care of yourself and keep growing. I'm always going to wish the best for you. I love you my baby i love you the mosttt , more n more day by day my cutu chhotu baby
+ Happy Birthday once again 22 ka hogya but for me you're my chhotu sa chhotu sa 2 saal ka bacha mera.
+</p>
+    </div>
+  </div>
+</div>
+
+<!-- SLIDE 4: CERTIFICATE -->
+<div class="slide" id="slide-4">
+  <div class="wavy-frame">
+    <div class="award-card">
+      <div class="award-ribbon">✦✦</div>
+      <h1 style="margin-bottom:4px;">Best Man to Ever Exist</h1>
+      <div class="award-divider">♡</div>
+      <p class="award-recipient"><br>One n Only Mr Kartik Nautiyal, my baby</p>
+      <p class="award-quote">
+        For being extremely caring, loving, and my absolute most favorite person!
+        👑 I'll always, truly, honestly, and completely love you the most
+      </p>
+    </div>
+  </div>
+</div>
+
+<!-- SLIDE 5: VERTICAL MEMORIES -->
+<div class="slide" id="slide-5">
+  <div class="wavy-frame">
+    <h2>Some of Our pictures togetherrrr</h2>
+
+    <div class="gallery-grid">
+
+      <div class="polaroid">
+        <img src="photo1.jpeg" alt="Memory 1">
+        <p>Our first image pta h when you shared this one aur story pe bhi and bkc maine bhi legit sabko dikhai aur itna dekhti thi aisa lagta tha bkc sach mai humari humne saath mai khichi ho</p>
+      </div>
+
+      <div class="polaroid">
+        <img src="photo2.jpeg" alt="Memory 2">
+        <p>Okay ye meri fav hai maine banai thi dekh CUTEST AREN'T WE , WE AREE!!!!</p>
+      </div>
+
+      <div class="polaroid">
+        <img src="photo3.jpeg" alt="Memory 3">
+        <p>And lastly this shaadi ni karega aise hi UTHA KE LE JAAUNGI, MERA MARD HAI TU</p>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<!-- SLIDE 6: MUSIC -->
+<div class="slide" id="slide-6">
+  <div class="wavy-frame">
+    <h2>Your my everything kartik , Everything reminds me of you EVERYTHING AROUND ME I happiest version of me with the idea of YOU</h2>
+    <p class="song-sub">Press play to listen (Hasa na vahi aake karungi)</p>
+
+    <div class="vinyl-container">
+      <div class="record" id="vinyl-record">
+        <div class="record-center"></div>
+      </div>
+    </div>
+
+    <audio id="my-song" src="song.mp4" preload="auto"></audio>
+    <button class="audio-play-btn" onclick="togglePlay()">Play ▶</button>
+  </div>
+</div>
+
+<!-- SLIDE 7 -->
+<div class="slide" id="slide-7">
+  <div class="wavy-frame">
+    <p style="font-size:1.3rem;margin-bottom:16px;">
+      Look, YK I to very well know ki I’m a well-meaning disaster girl who hasn't done grand gestures, Usually I’m just the person creating stories in my head making endless lists of pros and cons about things about my things about myself and overthinking until I end up messing things up. Honestly, I’m so sorry for all the times I caused problems and didn't realize I ended up hurting the only guy who ever looked at the real me and ready to held my hand and actually cared enough to be together till the end.
+As Ted Mosby would say from how i met your mother, "Shouldn’t we hold out for the person who doesn’t just tolerate our quirks… but actually kinda likes them?" Somehow, you didn't just survive my overthinking — you loved me enough to stay, and you became my favorite place to be. Love doesn't make sense, and loving you is the easiest, best thing I have ever done.
+Look, I guarantee that we'll have tough times. And I guarantee that at some point, one or both of us will get out of this thing. But I also guarantee that if I don't ask you to be mine everyday, I'll regret it for the rest of my life, 'cause I know, in my heart, you're the only one for me.
+You are my yellow umbrella in every storm, my best friend, and the one I want to tell every story to. So, no big Ted-style speech, just my whole heart: “You are the love of my life and i'm i was very clear in my mind i want you for life i want us besides each other in very life phases. Everything I have and everything I am is yours. Forever.” Will you be mine? I love you the most
+and also btw having a jaatni in your life is already a win okay
+    </p>
+
+    <div class="vintage-frame">
+      <img src="us.jpeg" alt="Us Together">
+    </div>
+  </div>
+</div>
+
+<!-- SLIDE 8 -->
+<div class="slide" id="slide-8">
+  <div class="wavy-frame">
+    <h2>ALL THINGS I WANT TO GIVE AND BE WITH YOU</h2>
+
+    <ul class="checklist">
+      <li>Love you even on your worst days.</li>
+      <li>Be your biggest supporter.</li>
+      <li>Listen when you need to talk.</li>
+      <li>Respect your dreams.</li>
+      <li>Choose you every single day.</li>
+      <li>Stand beside you in every situation.</li>
+      <li>Protect your peace.</li>
+      <li>Be your safe place.</li>
+      <li>Make you feel appreciated.</li>
+      <li>Stay loyal no matter what.</li>
+      <li>Celebrate your smallest wins.</li>
+      <li>Believe in you when you doubt yourself.</li>
+      <li>Hold your hand through tough times.</li>
+      <li>Make you laugh when life feels heavy.</li>
+      <li>Be honest with you always.</li>
+      <li>Respect your space when you need it.</li>
+      <li>Be proud to call you mine.</li>
+      <li>Support your ambitions.</li>
+      <li>Comfort you when you feel broken.</li>
+      <li>Be your calm in chaos.</li>
+      <li>Trust you with my whole heart.</li>
+      <li>Protect your heart like my own.</li>
+      <li>Remind you how amazing you are.</li>
+      <li>Stand up for you when needed.</li>
+      <li>Never stop flirting with you.</li>
+      <li>Be patient with you.</li>
+      <li>Grow with you, not against you.</li>
+      <li>Keep our bond strong.</li>
+      <li>Pray for your happiness.</li>
+      <li>Choose understanding over ego.</li>
+      <li>Be your partner in every adventure.</li>
+      <li>Stay by your side during storms.</li>
+      <li>Respect your family and loved ones.</li>
+      <li>Build a future together.</li>
+      <li>Appreciate everything you do.</li>
+      <li>Never take your love for granted.</li>
+      <li>Be your peace after a long day.</li>
+      <li>Encourage you to be your best self.</li>
+      <li>Be loyal even when it's hard.</li>
+      <li>Love you loudly and proudly.</li>
+    </ul>
+  </div>
+</div>
+
+<!-- SLIDE 9: FINAL KISS -->
+<div class="slide" id="slide-9">
+  <div class="wavy-frame kiss-frame">
+    <h1>One last thing, my baby</h1>
+
+    <div class="kiss-gif">
+      <img src="kiss.gif" alt="Cute animated kiss">
+    </div>
+
+    <h2 class="kiss-message"></h2>
+
+    <p class="kiss-subtext">
+      Lots of lots of kisssessss and bee happyy alwayssss and jaldi aaaja milne tighttt hugggg karke bht sarriiii puchiiiii
+      Happisttt birthday, my only the most favourite human ❤️
+    </p>
+  </div>
+</div>
+
+</div>
+
+<!-- NAVIGATION -->
+<div class="nav-bar">
+  <button class="nav-arrow hidden" id="prev-btn" onclick="goToPrevSlide()">❮</button>
+  <button class="nav-arrow" id="next-btn" onclick="goToNextSlide()">❯</button>
+</div>
+
+</div>
+
+<script>
+let currentSlide = 0;
+
+const slides = document.querySelectorAll(".slide");
+const prevBtn = document.getElementById("prev-btn");
+const nextBtn = document.getElementById("next-btn");
+const audio = document.getElementById("my-song");
+const record = document.getElementById("vinyl-record");
+const particleLayer = document.getElementById("slide-opening-particles");
+
+/* HEARTS AND SPARKLES ON EACH SLIDE OPENING */
+function popSlideParticles() {
+  const symbols = ["♡","♥","✦","✧","✨"];
+
+  for (let i = 0; i < 7; i++) {
+    const p = document.createElement("span");
+
+    p.className = "slide-pop";
+    p.textContent = symbols[Math.floor(Math.random() * symbols.length)];
+    p.style.left = (8 + Math.random() * 84) + "%";
+    p.style.top = (18 + Math.random() * 65) + "%";
+    p.style.animationDelay = (Math.random() * .18) + "s";
+    p.style.color = Math.random() > .5 ? "#b81424" : "#d4af37";
+
+    particleLayer.appendChild(p);
+
+    setTimeout(() => p.remove(), 1500);
+  }
+}
+
+/* SLIDE NAVIGATION */
+function updateSlide() {
+  popSlideParticles();
+
+  slides.forEach((slide,index) => {
+    if (index === currentSlide) {
+      slide.classList.add("active");
+    } else {
+      slide.classList.remove("active");
+    }
+  });
+
+  if (currentSlide === 0) {
+    prevBtn.classList.add("hidden");
+  } else {
+    prevBtn.classList.remove("hidden");
+  }
+
+  if (currentSlide === slides.length - 1) {
+    nextBtn.classList.add("hidden");
+  } else {
+    nextBtn.classList.remove("hidden");
+  }
+}
+
+function goToNextSlide() {
+  if (currentSlide < slides.length - 1) {
+    currentSlide++;
+    updateSlide();
+  }
+}
+
+function goToPrevSlide() {
+  if (currentSlide > 0) {
+    currentSlide--;
+    updateSlide();
+  }
+}
+
+/* MUSIC PLAYER */
+function togglePlay() {
+  if (audio.paused) {
+    audio.play().then(() => {
+      record.classList.add("playing");
+    }).catch(() => {
+      alert("Audio could not play. Make sure song.mp4 is uploaded in the same GitHub folder as index.html.");
+    });
+  } else {
+    audio.pause();
+    record.classList.remove("playing");
+  }
+}
+
+audio.addEventListener("ended",() => {
+  record.classList.remove("playing");
+});
+
+/* INITIAL PARTICLE BURST */
+popSlideParticles();
+</script>
+
+</body>
+</html>
